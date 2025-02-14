@@ -70,7 +70,7 @@ public class NumConvert
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        System.out.println("NUMBER CONVERSION");
+        System.out.println("\nNUMBER CONVERSION");
         while(true)
         {
         String ch[]={"Decimal", "Binary", "Octal", "Hexadecimal"};
