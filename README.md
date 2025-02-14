@@ -21,13 +21,13 @@ This Java program provides an efficient and reliable way to convert numbers betw
    ```bash
    git clone https://github.com/dakiyaanoosi/NumberConversion.git
    ```
-2. Compile **NumConvert.java**:
+2. Compile *NumConvert.java*:
    ```bash
    javac NumberConversion/NumConvert.java
 3. Run:
-  ```bash
-  java NumberConversion/NumConvert
-  ```
+   ```bash
+   java NumberConversion/NumConvert
+   ```
 ## Usage
 1. Run the program.
 2. Select the number system you want to convert from.
