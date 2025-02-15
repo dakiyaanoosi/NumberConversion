@@ -2,6 +2,18 @@ package NumberConversion;
 import java.util.Scanner;
 public class NumConvert
 {
+    static boolean checkValidity(String n)
+    {
+        int start=0;
+        if(n.charAt(0)=='-')
+        start=1;
+        for(int i=start;i<n.length();i++)
+        {
+            if(!Character.isDigit(n.charAt(i)))
+            return false;
+        }
+        return true;
+    }
     static boolean checkBin(int n)
     {
         while(n!=0)
@@ -30,12 +42,13 @@ public class NumConvert
     }
     static boolean checkHex(String n)
     {
+        n=n.toUpperCase();
         for(int i=0;i<n.length();i++)
         {
             char ch=n.charAt(i);
-            if(Character.isLetter(ch))
+            if(!Character.isDigit(ch))
             {
-                if(!"ABCDEF".contains(String.valueOf(Character.toUpperCase(ch))))
+                if(!(ch>='A' && ch<='F'))
                 return false;
             }
         }
@@ -79,7 +92,7 @@ public class NumConvert
         int ch1=sc.nextInt();
         while(true)
         {
-            if(ch1==1 || ch1==2 || ch1==3 || ch1==4)
+            if(ch1>=1 && ch1<=4)
             {
                 break;
             }
@@ -93,7 +106,7 @@ public class NumConvert
         int ch2=sc.nextInt();
         while(true)
         {
-            if((ch2==1 || ch2==2 || ch2==3 || ch2==4)&& ch2!=ch1)
+            if((ch2>=1 && ch2<=4) && ch2!=ch1)
             {
                 break;
             }
@@ -110,7 +123,14 @@ public class NumConvert
             case 1:
             {
                 System.out.print("Decimal Number : ");
-                int d=sc.nextInt();
+                sc.nextLine();
+                String n = sc.nextLine();
+                while(checkValidity(n)==false)
+                {
+                    System.out.print("Please enter a valid decimal number : ");
+                    n=sc.nextLine();
+                }
+                int d=Integer.parseInt(n);
                 if(ch2==2)
                 {
                     int result=DecTo.decToBin(d);
@@ -131,7 +151,14 @@ public class NumConvert
             case 2:
             {
                 System.out.print("Binary Number : ");
-                int b=sc.nextInt();
+                sc.nextLine();
+                String n = sc.nextLine();
+                while(checkValidity(n)==false)
+                {
+                    System.out.print("Please enter a valid binary number : ");
+                    n=sc.nextLine();
+                }
+                int b=Integer.parseInt(n);
                 b=returnBin(b, sc);
                 if(ch2==1)
                 {
@@ -153,7 +180,14 @@ public class NumConvert
             case 3:
             {
                 System.out.print("Octal Number : ");
-                int o=sc.nextInt();
+                sc.nextLine();
+                String n = sc.nextLine();
+                while(checkValidity(n)==false)
+                {
+                    System.out.print("Please enter a valid octal number : ");
+                    n=sc.nextLine();
+                }
+                int o=Integer.parseInt(n);
                 o=returnOct(o, sc);
                 if(ch2==1)
                 {
@@ -196,8 +230,6 @@ public class NumConvert
                 break;
             }
         }
-        if(ch1!=4)
-        sc.nextLine();
         System.out.println("1.Press ENTER to Convert again\n2.Type Anything & press ENTER to STOP");
         String input=sc.nextLine();
         if(!input.isEmpty())
