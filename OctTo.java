@@ -1,12 +1,12 @@
 package NumberConversion;
 public class OctTo extends BinTo
 {
-    static int octToDec(int n)
+    static long octToDec(long n)
     {
         String oct=n+"";
         int index=0;
-        int e=oct.length()-1;
-        int dec=0;
+        long e=oct.length()-1;
+        long dec=0;
         while(e>=0)
         {
             int digit=oct.charAt(index)-'0';
@@ -16,7 +16,7 @@ public class OctTo extends BinTo
         }
         return dec;
     }
-    static int octToBin(int n)
+    static long octToBin(long n)
     {
         String oct=n+"";
         String bin="";
@@ -37,11 +37,11 @@ public class OctTo extends BinTo
                 }
             }
         }
-        return Integer.parseInt(bin);
+        return Long.parseLong(bin);
     }
-    static String octToHex(int n)
+    static String octToHex(long n)
     {
-        int bin=octToBin(n);
+        long bin=octToBin(n);
         String hex=binToHex(bin);
         return hex;
     }
