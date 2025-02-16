@@ -14,11 +14,11 @@ public class NumConvert
         }
         return true;
     }
-    static boolean checkBin(int n)
+    static boolean checkBin(long n)
     {
         while(n!=0)
         {
-            int r=n%10;
+            long r=n%10;
             n/=10;
             if(r==1 || r==0)
             continue;
@@ -29,11 +29,11 @@ public class NumConvert
         }
         return true;
     }
-    static boolean checkOct(int n)
+    static boolean checkOct(long n)
     {
         while(n!=0)
         {
-            int r=n%10;
+            long r=n%10;
             n/=10;
             if(!(r<8))
             return false;
@@ -63,7 +63,7 @@ public class NumConvert
         }
         return n;
     }
-    static int returnOct(int n,Scanner sc)
+    static long returnOct(long n,Scanner sc)
     {
         while(checkOct(n)==false)
         {
@@ -72,7 +72,7 @@ public class NumConvert
         }
         return n;
     }
-    static int returnBin(int n,Scanner sc)
+    static long returnBin(long n,Scanner sc)
     {
         while(checkBin(n)==false)
         {
@@ -130,15 +130,15 @@ public class NumConvert
                     System.out.print("Please enter a valid decimal number : ");
                     n=sc.nextLine();
                 }
-                int d=Integer.parseInt(n);
+                long d=Long.parseLong(n);
                 if(ch2==2)
                 {
-                    int result=DecTo.decToBin(d);
+                    long result=DecTo.decToBin(d);
                     System.out.println("Binary Number : "+result+"\n");
                 }
                 if(ch2==3)
                 {
-                    int result=DecTo.decToOct(d);
+                    long result=DecTo.decToOct(d);
                     System.out.println("Octal Number : "+result+"\n");
                 }
                 if(ch2==4)
@@ -158,16 +158,16 @@ public class NumConvert
                     System.out.print("Please enter a valid binary number : ");
                     n=sc.nextLine();
                 }
-                int b=Integer.parseInt(n);
+                long b=Long.parseLong(n);
                 b=returnBin(b, sc);
                 if(ch2==1)
                 {
-                    int result=BinTo.binToDec(b);
+                    long result=BinTo.binToDec(b);
                     System.out.println("Decimal Number : "+result+"\n");
                 }
                 if(ch2==3)
                 {
-                    int result=BinTo.binToOct(b);
+                    long result=BinTo.binToOct(b);
                     System.out.println("Octal Number : "+result+"\n");
                 }
                 if(ch2==4)
@@ -187,16 +187,16 @@ public class NumConvert
                     System.out.print("Please enter a valid octal number : ");
                     n=sc.nextLine();
                 }
-                int o=Integer.parseInt(n);
+                long o=Long.parseLong(n);
                 o=returnOct(o, sc);
                 if(ch2==1)
                 {
-                    int result=OctTo.octToDec(o);
+                    long result=OctTo.octToDec(o);
                     System.out.println("Decimal Number : "+result+"\n");
                 }
                 if(ch2==2)
                 {
-                    int result=OctTo.octToBin(o);
+                    long result=OctTo.octToBin(o);
                     System.out.println("Binary Number : "+result+"\n");
                 }
                 if(ch2==4)
@@ -214,17 +214,17 @@ public class NumConvert
                 h=returnHex(h, sc);
                 if(ch2==1)
                 {
-                    int result=HexTo.hexToDec(h);
+                    long result=HexTo.hexToDec(h);
                     System.out.println("Decimal Number : "+result+"\n");
                 }
                 if(ch2==2)
                 {
-                    int result=HexTo.hexToBin(h);
+                    long result=HexTo.hexToBin(h);
                     System.out.println("Binary Number : "+result+"\n");
                 }
                 if(ch2==3)
                 {
-                    int result=HexTo.hexToOct(h);
+                    long result=HexTo.hexToOct(h);
                     System.out.println("Octal Number : "+result+"\n");
                 }
                 break;
