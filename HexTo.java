@@ -1,13 +1,13 @@
 package NumberConversion;
 public class HexTo extends BinTo
 {
-    static int hexToDec(String n)
+    static long hexToDec(String n)
     {
         int d[]={10, 11, 12, 13, 14, 15};
-        int e=n.length()-1;
+        long e=n.length()-1;
         int index=0;
-        int dec=0;
-        int digit=0;
+        long dec=0;
+        long digit=0;
         while(e>=0)
         {
             char ch=n.charAt(index);
@@ -21,7 +21,7 @@ public class HexTo extends BinTo
         }
         return dec;
     }
-    static int hexToBin(String n)
+    static long hexToBin(String n)
     {
         int d[]={10, 11, 12, 13, 14, 15};
         String oct=n;
@@ -52,15 +52,11 @@ public class HexTo extends BinTo
                 }
             }
         }
-        return Integer.parseInt(bin);
+        return Long.parseLong(bin);
     }
-    static int hexToOct(String n)
+    static long hexToOct(String n)
     {
-        int bin=hexToBin(n);
+        long bin=hexToBin(n);
         return binToOct(bin);
-    }
-    public static void main(String[] args)
-    {
-        System.out.println(hexToOct("a"));
     }
 }
