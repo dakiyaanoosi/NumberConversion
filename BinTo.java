@@ -1,22 +1,22 @@
 package NumberConversion;
 public class BinTo
 {
-    static int binToDec(int n)
+    static long binToDec(long n)
     {
         String bin=n+"";
-        int e=bin.length()-1;
+        long e=bin.length()-1;
         int index=0;
-        int dec=0;
+        long dec=0;
         while(e>=0)
         {
             int digit=bin.charAt(index)-'0';
-            dec=dec+((int)Math.pow(2,e)*digit);
+            dec=dec+((long)Math.pow(2,e)*digit);
             e--;
             index++;
         }
         return dec;
     }
-    static int binToOct(int n)
+    static long binToOct(long n)
     {
         String bin=n+"";
         while(bin.length()%3!=0)
@@ -38,16 +38,16 @@ public class BinTo
                 bitindex++;
             }
         }
-        int oct=0;
+        long oct=0;
         for(int i=0;i<bitindex;i++)
         {
             int e=2;
             int index=0;
-            int deceq=0;
+            long deceq=0;
             while(e>=0)
             {
                 int digit=bit[i].charAt(index)-'0';
-                deceq=deceq+((int)Math.pow(2,e)*digit);
+                deceq=deceq+((long)Math.pow(2,e)*digit);
                 e--;
                 index++;
             }
@@ -55,7 +55,7 @@ public class BinTo
         }
         return oct;
     }
-    static String binToHex(int n)
+    static String binToHex(long n)
     {
         char h[]={'A', 'B', 'C', 'D', 'E', 'F'};
         String bin=n+"";
