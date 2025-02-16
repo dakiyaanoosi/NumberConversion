@@ -1,37 +1,37 @@
 package NumberConversion;
 public class DecTo
 {
-    static int decToBin(int n)
+    static long decToBin(long n)
     {
-        int bin=0,p=1;
+        long bin=0,p=1;
         while(n!=0)
         {
-            int r=n%2;
+            long r=n%2;
             bin=bin+(r*p);
             n/=2;
             p*=10;
         }
         return bin;
     }
-    static int decToOct(int n)
+    static long decToOct(long n)
     {
-        int oct=0,p=1;
+        long oct=0,p=1;
         while(n!=0)
         {
-            int r=n%8;
+            long r=n%8;
             oct=oct+(r*p);
             n/=8;
             p*=10;
         }
         return oct;
     }
-    static String decToHex(int n)
+    static String decToHex(long n)
     {
         String hex="";
         char h[]={'A', 'B', 'C', 'D', 'E', 'F'};
         while(n!=0)
         {
-            int r=n%16;
+            int r=(int)n%16;
             if(r<10)
             hex=r+hex;
             else
